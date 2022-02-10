@@ -1,0 +1,28 @@
+header {
+	grid-area: header;
+}
+
+.navbar {
+	padding: 10px 0;
+
+	&-list {
+		@include flex-row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&-item {
+		&--logo {
+			font-size: 1.5rem;
+		}
+	}
+
+	&-burger {
+		opacity: 1;
+		transition: opacity 0.5s ease-in-out;
+
+		&-is_open {
+			opacity: 0;
+		}
+	}
+}
