@@ -6,7 +6,8 @@
 			"@config/*": ["config/*"],
 			"@api/*": ["api/*"],
 			"@lib/*": ["lib/*"],
-			"@styles/*": ["styles/*"]
+			"@styles/*": ["styles/*"],
+			"@utlis/*": ["utlis/*"]
 		}
 	},
 	"include": ["**/*.js"],

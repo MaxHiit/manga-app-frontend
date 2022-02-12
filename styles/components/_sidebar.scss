@@ -3,7 +3,7 @@
 	width: 50px;
 	height: 100vh;
 	transition: width 0.5s ease-in-out;
-	border-right: 1px solid $color-border;
+	border-right: 2px solid $color-border;
 
 	&.is_open {
 		width: 250px;
@@ -11,20 +11,80 @@
 
 	&-wrapper {
 		padding: 10px 10px 0 10px;
+		@include flex-column;
+		height: inherit;
 	}
 
 	&-icon {
 		padding-bottom: 10px;
+		text-align: right;
 	}
 
 	&-list {
+		flex: 1;
 		opacity: 0;
 		visibility: hidden;
 		transition: all 0.1s ease-in 0.2s;
+		@include flex-column;
 
 		&.is_visible {
 			opacity: 1;
 			visibility: visible;
+		}
+	}
+
+	&-item {
+		text-transform: uppercase;
+
+		&--searchbar {
+			@include flex-row;
+			justify-content: space-between;
+			position: relative;
+
+			&__btn {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				cursor: pointer;
+				height: 100%;
+				width: 40px;
+				border-top-right-radius: 20px;
+				border-bottom-right-radius: 20px;
+				background: transparent;
+
+				&:hover {
+					svg {
+						opacity: 0.5;
+					}
+				}
+			}
+
+			svg {
+				transform: scaleX(-1);
+				opacity: 1;
+				transition: opacity 0.5s ease-in-out;
+			}
+		}
+
+		&--link-page {
+			@include flex-column;
+			flex: 1;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		&__link {
+			@include flex-row;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 -10px;
+			padding: 10px 15px 10px 20px;
+			transition: all 0.5s ease;
+
+			&:hover {
+				background: $color-hover;
+			}
 		}
 	}
 }

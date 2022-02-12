@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { GoThreeBars, GoX } from 'react-icons/go'
+import { sidebarData } from 'utils/sidebarData'
+import Link from 'next/link'
+
+import Searchbar from '@components/Searchbar'
 
 const Sidebar = () => {
 	const [openSidebar, setSidebar] = useState(false)
@@ -21,14 +25,18 @@ const Sidebar = () => {
 						)}
 					</div>
 					<ul className={clsx('sidebar-list', { is_visible: openSidebar })}>
-						<li className='sidebar-item'>Search</li>
 						<li className='sidebar-item'>
-							<a href='' className='sidebar-link'>
-								Home
-							</a>
-							<a href='' className='sidebar-link'>
-								Categories
-							</a>
+							<Searchbar />
+						</li>
+						<li className='sidebar-item sidebar-item--link-page'>
+							{sidebarData.map((data, index) => (
+								<Link href={data.path} key={index}>
+									<a className='sidebar-item__link'>
+										<p>{data.title}</p>
+										{data.icon}
+									</a>
+								</Link>
+							))}
 						</li>
 					</ul>
 				</div>

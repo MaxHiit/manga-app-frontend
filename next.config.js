@@ -14,6 +14,7 @@ module.exports = {
 			'@api/': ['api/'],
 			'@lib/': ['lib/'],
 			'@styles/': ['styles/'],
+			'@utils/': ['utils/'],
 		},
 	},
 	include: ['*/.js'],
