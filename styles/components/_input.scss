@@ -1,0 +1,25 @@
+.input {
+	background: transparent;
+	border-radius: 20px;
+	width: inherit;
+	height: 100%;
+	color: #fff;
+	padding-left: 10px;
+	border: 2px solid transparent;
+	transition: border 0.5s ease-in;
+	outline: none;
+
+	&:focus {
+		border: 2px solid #454545;
+		outline: none;
+	}
+
+	&-box {
+		width: 100%;
+		height: 32px;
+	}
+
+	&:focus {
+		border: 1px solid $color-border;
+	}
+}
